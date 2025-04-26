@@ -1,0 +1,37 @@
+{{ define "main" }}
+  <div class="landingpage">
+    <div class="grid-container fivetoseven" role="main">
+      <div class="item" aria-label="Blog Posts">
+        <section id="posts-header">
+          <h1 class="h3-like" aria-level="1" aria-label="Posts">Posts</h1>
+          <p class="reset-margin">
+            <a class="icon" href="/" title="Home" aria-label="Return to home page.">
+              <i class="fas fa-home"></i> Return to Home
+            </a>
+          </p>
+        </section>
+      </div>
+      <div class="grid-container full autocenter">
+        <section id="posts-list" aria-label="Posts">
+          <div class="post-list">
+            {{ range .Pages }}
+              <div class="post-item">
+                <h2 class="h3-like">
+                  <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                </h2>
+                <p class="post-date">{{ .Date.Format "January 2, 2006" }}</p>
+                {{ with .Params.tldr }}
+                  <div class="post-tldr"><strong>tl;dr:</strong> {{ . }}</div>
+                {{ else }}
+                  {{ with .Description }}
+                    <div class="post-description">{{ . }}</div>
+                  {{ end }}
+                {{ end }}
+              </div>
+            {{ end }}
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+{{ end }}

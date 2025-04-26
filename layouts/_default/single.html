@@ -1,0 +1,30 @@
+{{ define "main" }}
+<main>
+	<article class="grid-container full autocenter">
+		<div class="title">
+			<h1 class="title">{{ .Title }}</h1>
+			<div class="meta">Posted on {{ dateFormat "2006.01.02" .Date }}{{ if .Draft }} <span class="draft-label">DRAFT</span> {{ end }}</div>
+		</div>
+		{{ if .Params.tldr }}
+		<div class="tldr">
+			<strong>tl;dr:</strong>
+			{{ .Params.tldr }}
+		</div>{{ end }}
+
+		<section class="body">
+			{{ .Content }}
+		</section>
+
+		<div id="post-footer">
+			<p class="reset-margin">
+				<a class="icon" href="/posts/" title="Back to Posts" aria-label="Return to posts list.">
+					<i class="fas fa-arrow-left"></i> Back to Posts
+				</a>
+				<a class="icon" href="/" title="Home" aria-label="Return to home page.">
+					<i class="fas fa-home"></i> Return to Home
+				</a>
+			</p>
+		</div>
+	</article>
+</main>
+{{ end }}

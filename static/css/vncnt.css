@@ -108,6 +108,45 @@ p.reset-margin {
   color: #555555;
 }
 
+/* Blog Post Styles
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.post-list {
+  padding: 0;
+  margin: 0;
+}
+
+.post-item {
+  margin-bottom: 2.5rem;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 1.5rem;
+  text-align: left;
+}
+
+.post-item:last-child {
+  border-bottom: none;
+}
+
+.post-item h2 {
+  margin-bottom: 1rem;
+}
+
+.post-date {
+  color: var(--text-color-softer);
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+.post-description {
+  margin-top: 1rem;
+}
+
+.post-tldr {
+  margin-top: 1rem;
+  background-color: var(--background-color-softer);
+  padding: 1rem;
+  border-radius: 4px;
+}
+
 /* Larger than mobile (default point when grid becomes active) */
 @media (min-width: 600px) {
   h1.h3-like, h2.h3-like {
